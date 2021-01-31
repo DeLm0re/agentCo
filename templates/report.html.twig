@@ -1,5 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ici c'est le template</h1>
+    <h1 class="title">Les rapports</h1>
+
+    {% if resolvedReports is null %}
+        <p class="info">Aucun rapport à étudier ...</p>
+    {% else %}
+        <div class="listing">
+            <div class="headerContainer">
+                <p class="header">id</p>
+                <p class="header">start</p>
+                <p class="header">end</p>
+                <p class="header">étape de production</p>
+                <p class="header">temps ouvré</p>
+            </div>
+            {% for resolvedReport in resolvedReports %}
+                <div class="row">
+                    {% for value in resolvedReport %}
+                        {% if value.timestamp is defined %}
+                            <p class="element">{{ value|date('d/m/Y h:m:s') }}</p>
+                        {% else %}
+                            <p class="element">{{ value }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}

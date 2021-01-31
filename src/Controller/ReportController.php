@@ -38,7 +38,7 @@ class ReportController extends AbstractController implements LoggerAwareInterfac
         }
 
         return $this->render('report.html.twig', [
-            'data' => $resolveReports,
+            'resolvedReports' => $resolveReports,
         ]);
     }
 }
