@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Listing des transactions</h1>
+
+    {% if allTransactions is empty %}
+        <p class="info">Aucune transaction configurée pour le moment ...</p>
+    {% else %}
+        <div class="listing">
+            <div class="headerContainer">
+                {% for property in properties %}
+                    <p class="header">{{ property }}</p>
+                {% endfor %}
+            </div>
+            {% for transaction in allTransactions %}
+                <div class="row">
+                    {% for property in properties %}
+                        {% set value = attribute(transaction, property) %}
+
+                        {% if property is same as('principalAgent') %}
+                            <p class="element">{{ value.name }} {{ value.lastname }}</p>
+                        {% elseif property is same as('associateAgent') %}
+                            <p class="element">{{ value.name }} {{ value.lastname }}</p>
+                        {% elseif value.timestamp is defined %}
+                            <p class="element">{{ value|date('d/m/Y h:m:s') }}</p>
+                        {% else %}
+                            <p class="element">{{ value }}</p>
+                        {% endif %}
+
+                    {% endfor %}
+                    <a class="buttonUpdate" href="{{ path('update_transaction', {'id': transaction.id }) }}">Modifier</a>
+                    <a class="buttonDelete" href="{{ path('delete_transaction', {'id': transaction.id }) }}">Supprimer</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <a class="button" href="{{ path('new_transaction') }}">Créer une transaction</a>
+{% endblock %}

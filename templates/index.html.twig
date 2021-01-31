@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Application AgentCo</h1>
+    <div class="textBlock">
+        <p class="text">L’objectif est de créer une application de gestion d’agents commerciaux.</p>
+    </div>
+    <div class="textBlock">
+        <p class="text">Le principe : le gérant doit pouvoir créer des agents commerciaux. Ces agents commerciaux effectuent des transactions.</p>
+        <p class="text">Les agents et les transactions seront des entités qu’il sera possible de créer, lister, éditer et supprimer.</p>
+    </div>
+    <div class="textBlock">
+        <p class="text">Les transactions seront liées à 2 agents :</p>
+        <p class="text">- un agent avec le statut principal qui touchera 85% du montant de la transaction</p>
+        <p class="text">- un agent avec le statut associé qui recevra une contribution à cette transaction de 10%</p>
+        <p class="text">- les 5% restants reviennent au gérant.</p>
+        <p class="text">Lors d’une saisie de transaction, il faudra renseigner le montant ainsi que les 2 agents impliqués dans la transaction.</p>
+    </div>
+    <div class="textBlock">
+        <p class="text">L’application devra permettre :</p>
+        <p class="text">- la saisie des agents avec les informations nom et prénom</p>
+        <p class="text">- la saisie des transactions avec les informations suivantes : agent principal, agent secondaire ainsi que le montant à répartir</p>
+        <p class="text">- la visualisation des commissions perçues par agent en fonction de leur statut (liste par transaction ainsi que le total).</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+@import 'var';
+
+.navigationContainer {
+  padding: 0 5%;
+  background-color: $blueColor;
+  box-shadow: $boxShadow;
+  .navigation {
+    display: flex;
+    flex-wrap: wrap;
+    .linkContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 2px solid $lightBlueColor;
+      transition: .3s;
+      &:last-child {
+        border-right: 2px solid $lightBlueColor;
+      }
+      &:hover {
+        background-color: $lightBlueColor;
+      }
+      .link {
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 20px 30px;
+      }
+    }
+  }
+}

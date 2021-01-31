@@ -1,0 +1,31 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, img, ul, li, form, label,
+article, aside, canvas,
+footer, header, menu, nav, section, summary,
+audio, video {
+  display: block;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: 14px 'Open Sans', sans-serif;
+  vertical-align: baseline;
+  line-height: 1em;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.content {
+  padding: 4vh 5% 0 5%;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
+
+

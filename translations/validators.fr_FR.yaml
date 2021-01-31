@@ -1,0 +1,16 @@
+agent:
+    status:
+        not_blank: Veuillez renseigner un status.
+    name:
+        not_blank: Le prénom de votre agent ne peut pas être vide.
+    lastname:
+        not_unique: Il existe déjà un agent avec ce nom.
+        not_blank: Le nom de votre agent ne peut pas être vide.
+
+transaction:
+    principalAgent:
+        not_blank: Veuillez renseigner un agent principal.
+    associateAgent:
+        not_blank: Veuillez renseigner un agent associé.
+    amount:
+        not_blank: Le montant de la transaction ne peut pas être vide.

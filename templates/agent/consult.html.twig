@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Fiche de {{ agent.name }}  {{ agent.lastname }}</h1>
+
+    <h2 class="subTitle">Commission en tant que agent principal</h2>
+    {% if commissions.principal is empty %}
+        <p class="info">Aucune commission en tant que agent principal pour le moment ...</p>
+    {% else %}
+        <div class="listing">
+            <div class="headerContainer">
+                {% for key, value in commissions.principal[0] %}
+                    <p class="header">{{ key }}</p>
+                {% endfor %}
+            </div>
+            {% for commission in  commissions.principal %}
+                <div class="row">
+                    {% for value in commission %}
+                        <p class="element">{{ value }}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <p class="total">Total :<span class="totalValue">{{ commissions.total.principal }} €</span></p>
+    {% endif %}
+
+    <h2 class="subTitle">Commission en tant que agent associé</h2>
+    {% if commissions.associate is empty %}
+        <p class="info">Aucune commission en tant que agent associé pour le moment ...</p>
+    {% else %}
+        <div class="listing">
+            <div class="headerContainer">
+                {% for key, value in commissions.associate[0] %}
+                    <p class="header">{{ key }}</p>
+                {% endfor %}
+            </div>
+            {% for commission in  commissions.associate %}
+                <div class="row">
+                    {% for value in commission %}
+                        <p class="element">{{ value }}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <p class="total">Total :<span class="totalValue">{{ commissions.total.associate }} €</span></p>
+    {% endif %}
+
+    <p class="total totalBig">Total ensemble :<span class="totalValue totalBigValue">{{ commissions.total.all }} €</span></p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form, { 'attr' : { 'class': 'form' } }) }}
+    {% for formProperty in formProperties %}
+        <div class="row">
+            {{ form_label(form[formProperty]) }}
+            {{ form_widget(form[formProperty], { 'attr' : { 'placeholder': '...' } }) }}
+            {{ form_errors(form[formProperty], { 'attr' : { 'class': 'error' } }) }}
+        </div>
+    {% endfor %}
+    {{ form_widget(form.submit, { 'label': 'Créer', 'attr' : { 'class': 'button' } }) }}
+    {{ form_end(form) }}
+{% endblock %}

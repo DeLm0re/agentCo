@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="title">Listing des agents</h1>
+
+    {% if allAgents is empty %}
+        <p class="info">Aucun agent configuré pour le moment ...</p>
+    {% else %}
+        <div class="listing">
+            <div class="headerContainer">
+                {% for property in properties %}
+                    <p class="header">{{ property }}</p>
+                {% endfor %}
+            </div>
+            {% for agent in allAgents %}
+                <div class="row">
+                    {% for property in properties %}
+                            <p class="element">{{ attribute(agent, property)}}</p>
+                    {% endfor %}
+                    <a class="buttonConsult" href="{{ path('consult_agent', {'id': agent.id }) }}">Consulter</a>
+                    <a class="buttonUpdate" href="{{ path('update_agent', {'id': agent.id }) }}">Modifier</a>
+                    <a class="buttonDelete" href="{{ path('delete_agent', {'id': agent.id }) }}">Supprimer</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <a class="button" href="{{ path('new_agent') }}">Créer un agent</a>
+{% endblock %}

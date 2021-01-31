@@ -1,0 +1,87 @@
+@import 'var';
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 0 0 30px 0;
+}
+
+.subTitle {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0 0 15px 0;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding: 0 0 30px 0;
+  font-size: 18px;
+  .totalValue {
+    font-style: italic;
+    font-size: 18px;
+    color: $blueColor;
+    padding: 0 0 0 5px;
+  }
+}
+
+.totalBig {
+  font-size: 22px;
+  .totalBigValue {
+    font-size: 22px;
+  }
+}
+
+.textBlock {
+  padding: 0 0 20px 0;
+  p {
+    line-height: 1.2em;
+  }
+  .text {
+    font-size: 18px;
+  }
+}
+
+.button, .buttonDelete, .buttonConsult, .buttonUpdate {
+  width: max-content;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 7px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.button {
+  font-size: 16px;
+  padding: 15px 20px;
+  background-color: $blueColor;
+  &:hover {
+    background-color: $lightBlueColor;
+  }
+}
+
+.buttonDelete {
+  padding: 10px 15px;
+  background-color: darkred;
+  &:hover {
+    background-color: red;
+  }
+}
+
+.buttonConsult {
+  padding: 10px 15px;
+  background-color: darkgreen;
+  &:hover {
+    background-color: green;
+  }
+}
+
+.buttonUpdate {
+  padding: 10px 15px;
+  background-color: rebeccapurple;
+  &:hover {
+    background-color: mediumpurple;
+  }
+}
